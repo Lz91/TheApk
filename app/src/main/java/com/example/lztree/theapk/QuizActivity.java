@@ -29,6 +29,18 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionTextView.setText(question);
     }
 
+    private void rollBackQuestion() {
+        if (mCurrentIndex != 0) {
+            mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
+        }
+        else {
+            mCurrentIndex = mQuestionBank.length - 1;
+        }
+
+        int question = mQuestionBank[mCurrentIndex].getTextResId();
+        mQuestionTextView.setText(question);
+    }
+
     private void checkAnswer(boolean userPressedTrue) {
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
 
@@ -82,6 +94,14 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 updateQuestion();
+            }
+        });
+
+        mPrevButton = findViewById(R.id.prev_button);
+        mPrevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rollBackQuestion();
             }
         });
 

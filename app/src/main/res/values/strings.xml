@@ -9,8 +9,8 @@
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
 
-    <string name="question_1">太陽是圓的？</string>
+    <string name="question_1">太阳是圆的？</string>
     <string name="question_2">地球是平的？</string>
-    <string name="question_3">水是軟的？</string>
+    <string name="question_3">水是软的？</string>
 
 </resources>
